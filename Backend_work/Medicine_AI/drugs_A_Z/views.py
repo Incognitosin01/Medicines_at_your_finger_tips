@@ -170,8 +170,10 @@ def speech_to_text(request):
             output = " " + r.recognize_google(audio)
         except sr.UnknownValueError:
             output = "Could not understand audio"
+            print(output)
         except sr.RequestError as e:
             output = "Could not request results; {0}".format(e)
+            print(output)
         data = output
         global data_1 
         data_1 = str(data)
@@ -196,10 +198,12 @@ def find_similar_word(s, kw,):
         x_d = get_close_matches(s, kw)
     if len(x_d)==0:
         x_d = []
-        x_d[0] = 'Not recognied!'
+        x_d.append('Not recognized!')
     return x_d[0]
 
 def return_page(request):
     z = x_d[0].replace(' ','')
+    if(x_d[0]=='Not recognized!'):
+        return render(request,"E:\\Github_projects\\Medicines_at_your_finger_tips\\Backend_work\\Medicine_AI\\drugs_A_Z\\templates\\HTML\\phonetic_search.html")
     # messages.warning(request,"Please try to spell rightly.")
     return render(request,"Data\\drug_html_data\\medicine_data\\"+z+".html")
