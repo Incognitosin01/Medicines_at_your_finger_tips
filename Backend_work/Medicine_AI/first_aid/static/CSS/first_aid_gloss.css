@@ -1,0 +1,321 @@
+body{
+    background-color:whitesmoke;
+  }
+  .navbar{
+    background-color: cadetblue;
+    margin-bottom : 20px;
+  }
+  .navbar:hover{
+    transform: scaleY(1.20);
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+  }
+.vertical-center{
+    margin: 0;
+  position: relative;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+main{
+    display: grid;
+    grid-template-rows: 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px ;
+    grid-gap: 20px;
+}
+
+.div1{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div1:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div2{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div2:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div3{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div3:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div4{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div4:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div5{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div5:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div6{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div6:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div7{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div7:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div8{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div8:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div9{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div9:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div10{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div10:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div11{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div11:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div12{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div12:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div13{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div13:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div14{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div14:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div15{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div15:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div16{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div16:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div17{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div17:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div18{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div18:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div19{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div19:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div20{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div20:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div21{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div21:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div22{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div22:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div23{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div23:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div24{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div24:hover{
+
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div25{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div25:hover{
+
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div26{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div26:hover{
+
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div27{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div27:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div28{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div28:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div29{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div29:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div30{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div30:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div31{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div31:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div32{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div32:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div33{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div33:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div34{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div34:hover{
+
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div35{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div35:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div36{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div36:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.div37{
+    background-color: cadetblue;
+    padding-right: 10px;
+}
+.div37:hover{
+    
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}

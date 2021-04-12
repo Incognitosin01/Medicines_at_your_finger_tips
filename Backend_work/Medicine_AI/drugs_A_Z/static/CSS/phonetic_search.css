@@ -1,0 +1,27 @@
+body {
+  background-color: whitesmoke;
+}
+.navbar {
+  background-color: cadetblue;
+}
+.navbar:hover {
+  /*transform: scaleY(0.85);*/
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.xc {
+  margin-top: 30px;
+}
+#img_1 {
+  width: 100%;
+  height: 500px;
+  margin-top: 8px;
+  object-fit:fill;
+}
+.b_grp{
+    font-size: 30px;
+    border-color:cadetblue;
+    border-radius: 10px;
+}
+.k_grp{
+    margin-bottom: 30px;
+}

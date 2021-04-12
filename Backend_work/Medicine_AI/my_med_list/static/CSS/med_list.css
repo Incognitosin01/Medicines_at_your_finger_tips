@@ -1,0 +1,48 @@
+body {
+  background-color: whitesmoke;
+}
+.navbar {
+  background-color: cadetblue;
+}
+.navbar:hover {
+  /*transform: scaleY(0.85);*/
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.featurette:hover {
+  transform: scale(0.9);
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
+}
+.email_data {
+  margin: 10px;
+  /* padding: 10px; */
+}
+.add_dos {
+  background-color: cadetblue;
+  color: whitesmoke;
+  font-size: 30px;
+  padding: 10px 20px;
+  border-radius: 70%;
+  border-color: whitesmoke;
+}
+
+#mybutton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+#formm{
+    display: none;
+}
+
+.form_btn{
+    float:right;
+    font-style: oblique;
+    padding: 20px;
+}
+.tab_sp{
+  margin: 20px;
+}
+.tbody{
+  text-align: justify;
+}

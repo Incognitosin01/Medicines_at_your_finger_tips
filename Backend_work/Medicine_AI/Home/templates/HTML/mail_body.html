@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    
+    <title>Email Confirmation</title>
+    
+</head>
+<body>
+    <div class="card container form-control" style="background-color: cadetblue;">
+        <h3 class="card-header" ><b>
+            EMAIL CONFIRMATION FOR ACCOUNT VERIFICATION
+            </b>
+        </h3>
+        <div class="card-body" style="background-color: whitesmoke;">
+            <h1>Hello, {{first_name}} {{last_name}}</h1>
+            <h2>Welcome to Mitian's Doctor as {{user_name}}</h2>
+            <big style="color: red;"><i>OTP : {{token}}</i></big>
+            <br><br>
+            <h3>*Please dont share OTP with anyone for security concerns.</h3>
+        </div>
+    </div>
+
+</body>
+
+</html>
