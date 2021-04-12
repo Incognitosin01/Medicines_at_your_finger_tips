@@ -8,7 +8,7 @@ from my_med_list.models import Med_list
 from django.contrib import messages
 import json
 from django.http import JsonResponse
-from .chatbot import chatbot
+from .chatbot import getresponse
 import re
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
@@ -238,11 +238,10 @@ def Chatbot(request):
 
 def get_bot_response(request):
     if request.method == "GET":
-        print("Hello")
+        
         userText = request.GET['msg']
-        print("Hello1",str(chatbot.get_response(userText)))
-        return HttpResponse(str(chatbot.get_response(userText)))
-        print("Hello")
+        return HttpResponse(str(getresponse(userText)))
+        
     else:
         return HttpResponse("<h1>Error 404</h1>")
    
