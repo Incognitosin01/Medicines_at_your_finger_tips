@@ -2,13 +2,10 @@ body{
     background-color:whitesmoke;
   }
   .navbar{
-    background-color: cadetblue;
+    background-image: linear-gradient(45deg, white,rgb(42, 160, 150));
     margin-bottom : 20px;
   }
-  .navbar:hover{
-    transform: scaleY(1.20);
-    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
-  }
+  
 main{
     display: grid;
     grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;

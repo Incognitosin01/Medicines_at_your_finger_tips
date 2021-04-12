@@ -2,18 +2,15 @@ body{
     background-color:whitesmoke;
   }
   .navbar{
-    background-color: cadetblue;
+    background-image: linear-gradient(45deg, white,rgb(42, 160, 150));
     margin-bottom : 20px;
   }
-  .navbar:hover{
-    transform: scaleY(1.20);
-    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
-  }
+  
 .card{
     background-color: cadetblue
 }
 .card:hover{
-    transform: scale(0.85);
+    transform: scale(0.97);
     box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
 }
 .navbar{

@@ -11,6 +11,9 @@
   <link rel="shortcut icon" href="{% static 'IMAGES/favicon.ico' %}" type="image/x-icon">
   <link rel="icon" href="{% static 'IMAGES/favicon.ico' %}" type="image/x-icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
   <link rel="stylesheet" href="{% static 'CSS/Chatbot.css' %}">
 </head>
 
@@ -19,13 +22,13 @@
   <section class="msger">
     <header class="msger-header">
       <div class="msger-header-title">
-        <i class="fas fa-bug"></i> MITIAN's CONSULTANT DOCTOR <i class="fas fa-bug"></i>
+        <h3><i class="fa fa-user-md fa-2x"></i>   MITIAN's CONSULTANT DOCTOR   <i class="fa fa-user-md fa-2x"></i></h3>
       </div>
     </header>
 
     <main class="msger-chat">
       <div class="msg left-msg">
-        <div class="msg-img" style="background-color: aqua;"></div>
+        <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"></div>
 
         <div class="msg-bubble">
           <div class="msg-info">
@@ -34,20 +37,19 @@
           </div>
 
           <div class="msg-text">
-            Hello its me MITIAN DOCTOR!
+            Hello it's me MITIAN DOCTOR!
           </div>
         </div>
       </div>
-
     </main>
 
     <form class="msger-inputarea">
-      <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
-      <button type="submit" class="msger-send-btn">Send</button>
+      <input type="text" class="msger-input  col-10" id="textInput" placeholder="Enter your message...">
+      <button type="submit" class="btn btn-outline-dark col-2" style="font-weight: 525;outline-color: black;">Send</button>
     </form>
   </section>
   <!-- partial -->
-  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+  
   <script>
 
     const msgerForm = get(".msger-inputarea");
@@ -63,10 +65,8 @@
 
     msgerForm.addEventListener("submit", event => {
       event.preventDefault();
-
       const msgText = msgerInput.value;
       if (!msgText) return;
-
       appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
       msgerInput.value = "";
       botResponse(msgText);
@@ -75,17 +75,17 @@
     function appendMessage(name, img, side, text) {
       //   Simple solution for small apps
       const msgHTML = `
-<div class="msg ${side}-msg">
-  <div class="msg-img" style="background-image: url(${img})"></div>
-  <div class="msg-bubble">
-    <div class="msg-info">
-      <div class="msg-info-name">${name}</div>
-      <div class="msg-info-time">${formatDate(new Date())}</div>
-    </div>
-    <div class="msg-text">${text}</div>
-  </div>
-</div>
-`;
+          <div class="msg ${side}-msg">
+            <div class="msg-img" style="background-image: url(${img})"></div>
+            <div class="msg-bubble">
+              <div class="msg-info">
+                <div class="msg-info-name">${name}</div>
+                <div class="msg-info-time">${formatDate(new Date())}</div>
+              </div>
+              <div class="msg-text">${text}</div>
+            </div>
+          </div>
+          `;
 
       msgerChat.insertAdjacentHTML("beforeend", msgHTML);
       msgerChat.scrollTop += 500;
