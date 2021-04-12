@@ -4,8 +4,11 @@ from django.http import JsonResponse
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib import messages
 from .models import Medicine_data
+from Home.models import side_effect
 from string import ascii_lowercase
 # Create your views here.
+
+
 import re
 import speech_recognition as sr
 import pyttsx3
@@ -159,6 +162,8 @@ def Phonetic_search(request):
 def speech_to_text(request):
     
     # get audio from the microphone
+    global x_d
+    x_d=['Not recognized!']
     if request.method == 'POST':
         data = request.POST.get('record')
         r = sr.Recognizer()
@@ -175,12 +180,16 @@ def speech_to_text(request):
             output = "Could not request results; {0}".format(e)
             print(output)
         data = output
-        global data_1 
+        global data_1
+        
         data_1 = str(data)
         data_1 = data_1.replace(' ','')
         data_1 = data_1.capitalize()
         print(data_1)
-        ans = find_similar_word(data_1,list((medicine.objects.values_list('name',flat=True))))
+        global med1,med2
+        med1=list(side_effect.objects.values_list('name',flat=True))
+        med2=list(medicine.objects.values_list('name',flat=True))
+        ans = find_similar_word(data_1,med1+med2)
         ans = str(ans)
         return render(request,'HTML/phonetic_search.html',{'data':ans})
 
@@ -190,20 +199,47 @@ def speech_to_text(request):
 
 
 def find_similar_word(s, kw,):
-    global x_d 
     
-    if s in kw : 
-        x_d = [s]
+    global x_d
+    x_d=['Not recognized!']
+    if s in kw :
+        x_d[0] = s
     else :
         x_d = get_close_matches(s, kw)
-    if len(x_d)==0:
-        x_d = []
-        x_d.append('Not recognized!')
+        if len(x_d)==0:
+            x_d=['Not recognized!']
+            
     return x_d[0]
 
 def return_page(request):
+    
+    print(x_d)
     z = x_d[0].replace(' ','')
     if(x_d[0]=='Not recognized!'):
         return render(request,"E:\\Github_projects\\Medicines_at_your_finger_tips\\Backend_work\\Medicine_AI\\drugs_A_Z\\templates\\HTML\\phonetic_search.html")
-    # messages.warning(request,"Please try to spell rightly.")
-    return render(request,"Data\\drug_html_data\\medicine_data\\"+z+".html")
+    elif(x_d[0] not in med1):
+        return render(request,"E:\\Github_projects\\Medicines_at_your_finger_tips\\Backend_work\\Medicine_AI\\drugs_A_Z\\templates\\HTML\\phonetic_search.html")
+
+
+    else:
+        return render(request,"Data\\drug_html_data\\medicine_data\\"+z+".html")
+        
+
+def return_side_effects(request):
+    z=x_d[0]
+    
+    if(x_d[0]=='Not recognized!'):
+        return render(request,"E:\\Github_projects\\Medicines_at_your_finger_tips\\Backend_work\\Medicine_AI\\drugs_A_Z\\templates\\HTML\\phonetic_search.html")
+    elif(z not in med2):
+
+        return render(request,"E:\\Github_projects\\Medicines_at_your_finger_tips\\Backend_work\\Medicine_AI\\drugs_A_Z\\templates\\HTML\\phonetic_search.html")
+
+    
+    else:
+        z = x_d[0].replace('-',' ')
+        return render(request,"Data\\side_effects2\\"+z+".html")
+            
+
+
+
+

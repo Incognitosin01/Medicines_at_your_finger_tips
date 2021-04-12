@@ -10,5 +10,7 @@ urlpatterns = [
     path('Medicine/',views.get_data,name="medicine_data"),
     path("phonetic_search/",views.Phonetic_search,name='Phonetic_search'),
     path("speech_to_text/",views.speech_to_text,name='speech_to_text'),
-    path("voice_data/",views.return_page,name='voice_data')
+    path("voice_data/",views.return_page,name='voice_data'),
+    path("voice_effects_data/",views.return_side_effects,name='voice_effects_data'),
+
 ]

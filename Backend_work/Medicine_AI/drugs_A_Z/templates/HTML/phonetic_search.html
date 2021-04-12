@@ -55,9 +55,9 @@
             <div class="col">
                 <h4 class="lead"
                     style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-                    Drugs : Specify Name of drugs
+                    Drugs : Specify the Name of medicine with your voice
                     <br>
-                    Side-Effects : Specify word 'side-effect' for Drugs side effects for eg : 'paracetamol side-effect'
+                   
                 </h4>
             </div>
             <div class="col">
@@ -74,8 +74,9 @@
                 ON MICROPHONE BEFORE SPEAKING</h2>
             {% endif %}
             <div class="btn-group btn-group-toggle vertical-center k_grp">
-                <a href="{%url 'voice_data' %}" class="btn btn-outline-dark b_grp ">YES</a>
-                <a href="{%url 'Phonetic_search'%}" class="btn btn-outline-dark b_grp">NO</a>
+                <a href="{%url 'voice_data' %}" class="btn btn-outline-dark b_grp ">Medicine Info</a>
+                <a href="{%url 'voice_effects_data'%}" class="btn btn-outline-dark b_grp">Side Effects</a>
+                <a href="{%url 'Phonetic_search'%}" class="btn btn-outline-dark b_grp">Exit</a>
             </div>
             </center>
             <footer class="container" style="margin-top: 15px">
