@@ -215,17 +215,13 @@ def return_page(request):
     
     z = x_d[0].replace(' ','')
     if(x_d[0]=='Not recognized!'):
-        print(1)
+        # print(1)
         return render(request,"HTML/phonetic_search.html")
     elif(x_d[0] not in med2):
-        print(2)
+        # print(2)
         return render(request,"HTML/phonetic_search.html")
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     else:
-        print(3)
+        # print(3)
         return render(request,"Data\\drug_html_data\\medicine_data\\"+z+".html")
         
 
