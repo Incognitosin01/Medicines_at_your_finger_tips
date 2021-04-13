@@ -39,9 +39,9 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light" id='home_nav'>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark " id='home_nav'>
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">MITIAN's DOCTOR</a>
+      <a class="navbar-brand" href="{% url 'home'%}">MITIAN's DOCTOR</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -159,7 +159,7 @@
             aria-label="Search" />
           {% if user.is_authenticated %}
 
-          <button class="btn btn-outline-dark mx-1" type="submit" id="search">
+          <button class="btn nav_btn btn-outline-dark mx-1" type="submit" id="search">
             Search
           </button>
           {% else %}
@@ -185,12 +185,12 @@
           {% endif %}
 
         </form>
-        <div id="Login n Submit">
+        <div>
 
           {% if user.is_authenticated %}
           Hello!!
           {% else %}
-          <button type="button" class="btn btn-outline-dark mx-2 my-2" data-bs-toggle="modal"
+          <button type="button" class="btn nav_btn btn-outline-dark mx-2 my-2" data-bs-toggle="modal"
             data-bs-target="#SignupModalCenter">
             Sign Up
           </button>
@@ -253,12 +253,12 @@
           {% if user.is_authenticated %}
           {{request.user}}
           <a href="{% url 'logout' %}">
-            <button type="button" class="btn btn-outline-dark my-auto" type="submit">Logout</button>
+            <button type="button" class="btn nav_btn btn-outline-dark my-auto" type="submit">Logout</button>
           </a>
 
           {% else %}
 
-          <button class="btn btn-outline-dark my-2" type="submit" data-bs-toggle="modal"
+          <button class="btn  nav_btn btn-outline-dark my-2" type="submit" data-bs-toggle="modal"
             data-bs-target="#LoginModalCenter">
             Login
           </button>
@@ -304,7 +304,7 @@
   </nav>
 
   {% for message in messages %}
-  <div class="alert {{ message.tags }} alert-dismissible" role="alert" id="msg" ">
+  <div class="alert {{ message.tags }} alert-dismissible" style="margin-top: 70px;" role="alert" id="msg" ">
     <strong>Message : </strong>
     {{ message }}
 
@@ -340,7 +340,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{% static '/IMAGES/c12.jpg' %}" class="d-block w-100 p-100" alt="Medicines" />
+        <img src="{% static '/IMAGES/c12.jpg' %}" class="d-block h-100 w-100 p-100" alt="Medicines" />
         <div class="carousel-caption d-none d-md-block">
           <h5>AI in Medicine</h5>
           <p>AI is transforming the practice of medicine. It’s helping doctors diagnose patients more accurately, make
@@ -348,7 +348,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{% static '/IMAGES/c10.jpg' %}" class="d-block w-100" alt="Medicines" />
+        <img src="{% static '/IMAGES/c10.jpg' %}" class="d-block h-100 w-100" alt="Medicines" />
         <div class="carousel-caption d-none d-md-block">
           <h5>Robotic Surgeries</h5>
           <p>Robotic surgery are types of surgical procedures that are done using robotic systems. Robotically-assisted
@@ -357,7 +357,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{% static '/IMAGES/c11.jpg' %}" class="d-block w-100" alt="Medicines" />
+        <img src="{% static '/IMAGES/c11.jpg' %}" class="d-block h-100 w-100" alt="Medicines" />
         <div class="carousel-caption d-none d-md-block">
           <h5>Nanotechnology in Medicine</h5>
           <p>One application of nanotechnology in medicine currently being developed involves employing nanoparticles to
