@@ -6,9 +6,6 @@ from django.contrib import messages
 from .models import Medicine_data
 from Home.models import side_effect
 from string import ascii_lowercase
-# Create your views here.
-
-
 import re
 import speech_recognition as sr
 import pyttsx3
@@ -107,6 +104,7 @@ def get_data(request):
     x = request.GET['term']
     print(x)
     z = x.replace(' ','')
+    z = z.replace('|',',')
     if x!=("Your Medicines List Ends Here"):
         return render(request,'Data\\drug_html_data\\medicine_data\\'+z+".html")
     else:
@@ -200,7 +198,7 @@ def speech_to_text(request):
 
 def find_similar_word(s, kw,):
     
-    global x_d
+    
     x_d=['Not recognized!']
     if s in kw :
         x_d[0] = s
@@ -216,9 +214,9 @@ def return_page(request):
     print(x_d)
     z = x_d[0].replace(' ','')
     if(x_d[0]=='Not recognized!'):
-        return render(request,"E:\\Github_projects\\Medicines_at_your_finger_tips\\Backend_work\\Medicine_AI\\drugs_A_Z\\templates\\HTML\\phonetic_search.html")
+        return render(request,"HTML/phonetic_search.html")
     elif(x_d[0] not in med1):
-        return render(request,"E:\\Github_projects\\Medicines_at_your_finger_tips\\Backend_work\\Medicine_AI\\drugs_A_Z\\templates\\HTML\\phonetic_search.html")
+        return render(request,"HTML/phonetic_search.html")
 
 
     else:
@@ -226,13 +224,14 @@ def return_page(request):
         
 
 def return_side_effects(request):
+    
     z=x_d[0]
     
     if(x_d[0]=='Not recognized!'):
-        return render(request,"E:\\Github_projects\\Medicines_at_your_finger_tips\\Backend_work\\Medicine_AI\\drugs_A_Z\\templates\\HTML\\phonetic_search.html")
+        return render(request,"HTML/phonetic_search.html")
     elif(z not in med2):
 
-        return render(request,"E:\\Github_projects\\Medicines_at_your_finger_tips\\Backend_work\\Medicine_AI\\drugs_A_Z\\templates\\HTML\\phonetic_search.html")
+        return render(request,"HTML/phonetic_search.html")
 
     
     else:

@@ -1,31 +1,25 @@
 body{
-    background-color:whitesmoke;
+    background-image: linear-gradient(120deg, white,rgb(42, 160, 150));
 }
 .navbar{
-    background-color:cadetblue;
+    background-image: linear-gradient(45deg, white,rgb(42, 160, 150));
 }
-.navbar:hover{
-    /*transform: scaleY(0.85);*/
-    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
-}
+
 .card{
-    background-color: cadetblue;
+    background-image: linear-gradient(45deg, whitesmoke,rgb(42, 160, 150));
 }
-Login n Submit
-{
-    margin: 2000px;
-    padding: 20px;
-}
+
 .carousel-inner {
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-top: 70px;
 }
 .container_1{
     padding-top: 30px;
     padding-bottom: 20px;  
 }
 .card:hover{
-    transform: scale(0.85);
+    transform: scale(0.96);
     box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
 }
 .card-img-top {
