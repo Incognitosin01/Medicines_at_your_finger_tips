@@ -199,7 +199,7 @@ def speech_to_text(request):
 def find_similar_word(s, kw,):
     
     
-    x_d=['Not recognized!']
+    global x_d
     if s in kw :
         x_d[0] = s
     else :
@@ -210,7 +210,7 @@ def find_similar_word(s, kw,):
     return x_d[0]
 
 def return_page(request):
-    
+    global x_d
     print(x_d)
     z = x_d[0].replace(' ','')
     if(x_d[0]=='Not recognized!'):
@@ -224,7 +224,7 @@ def return_page(request):
         
 
 def return_side_effects(request):
-    
+    global x_d
     z=x_d[0]
     
     if(x_d[0]=='Not recognized!'):
