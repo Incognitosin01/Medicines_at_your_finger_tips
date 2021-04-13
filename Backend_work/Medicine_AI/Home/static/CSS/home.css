@@ -3,16 +3,19 @@ body{
 }
 .navbar{
     background-image: linear-gradient(45deg, white,rgb(42, 160, 150));
+    
 }
 
 .card{
     background-image: linear-gradient(45deg, whitesmoke,rgb(42, 160, 150));
 }
-
+.modal-backdrop{
+    display: none;
+}
 .carousel-inner {
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-top: 70px;
+    
 }
 .container_1{
     padding-top: 30px;
