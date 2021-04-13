@@ -220,10 +220,7 @@ def return_page(request):
     elif(x_d[0] not in med2):
         print(2)
         return render(request,"HTML/phonetic_search.html")
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     else:
         print(3)
         return render(request,"Data\\drug_html_data\\medicine_data\\"+z+".html")
