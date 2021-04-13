@@ -3,6 +3,7 @@ import sys,os
 from os import listdir
 from django.contrib.auth.decorators import login_required
 from os.path import isfile, join
+import Data
 
 @login_required(login_url='home')
 def wounds(request):
@@ -21,7 +22,7 @@ def wound_infection(request):
 def med_list(request):
     
     meds = []
-    for f in listdir("Z:\\Backend_work\\Medicine_AI\\Data\\wounds\\burns"):
+    for f in listdir("Data/wounds/burns"):
         f=f.replace(".html","")
         meds.append(f)
     return render(request,"HTML/burns_med.html",{"list":meds})
@@ -31,7 +32,7 @@ def get_data(request):
     x = request.GET['term']
     print(x)
     z = x.replace(' ','')
-    return render(request,'Z:\\Backend_work\\Medicine_AI\\Data\\wounds\\burns\\'+z+".html")
+    return render(request,'/Data/wounds/burns/'+z+".html")
 
 @login_required(login_url='home')
 def Pregnancy(request):
@@ -77,7 +78,7 @@ def Skin_infection(request):
 def Bacterial_Inf(request):
     
     meds = []
-    for f in listdir("Z:\\Backend_work\\Medicine_AI\\Data\\Skin_infections\\bacterial_infection_med"):
+    for f in listdir("Data/Skin_infections/bacterial_infection_med"):
         f=f.replace(".html","")
         meds.append(f)
     return render(request,"HTML/Bacterial_Infection.html",{"list":meds})
@@ -86,12 +87,12 @@ def get_data_Bacterial(request):
     x = request.GET['term']
     print(x)
     z = x.replace(' ','')
-    return render(request,'Z:\\Backend_work\\Medicine_AI\\Data\\Skin_infections\\bacterial_infection_med'+z+'.html')
+    return render(request,'Data/Skin_infections/bacterial_infection_med/'+z+'.html')
 
 @login_required(login_url='home')
 def Soft_Tissue(request):
     meds = []
-    for f in listdir("Z:\\Backend_work\\Medicine_AI\\Data\\Skin_infections\\soft_tissue_infection"):
+    for f in listdir("Data/Skin_infections/soft_tissue_infection"):
         f=f.replace(".html","")
         meds.append(f)
     return render(request,"HTML/Soft_Tissue.html",{"list":meds})
@@ -100,4 +101,4 @@ def get_data_Tissue(request):
     x = request.GET['term']
     print(x)
     z = x.replace(' ','')
-    return render(request,'Z:\\Backend_work\\Medicine_AI\\Data\\Skin_infections\\soft_tissue_infection\\'+z+'.html')
+    return render(request,'Data/Skin_infections/soft_tissue_infection/'+z+'.html')
