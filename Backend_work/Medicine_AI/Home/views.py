@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
 from .models import Contact_us,medicine,side_effect
 from my_med_list.models import Med_list
 from django.contrib import messages
@@ -49,28 +50,36 @@ def Home(request):
     
     return render(request,'HTML/index.html')
 
+@login_required(login_url='home')
 def about(request):
     return render(request,'HTML/about.html')
 
+@login_required(login_url='home')
 def side_effects(request):
 
     return render(request,'HTML/side_effects.html')
 
+@login_required(login_url='home')
 def contact_us(request):
     return render(request,'HTML/contact_us.html')
 
+@login_required(login_url='home')
 def drug_A_Z(request):
     return render(request,'HTML/Drugs_a-z.html')
 
+@login_required(login_url='home')
 def drug_cond(request):
     return render(request,'HTML/drugs_by_condition.html')
 
+@login_required(login_url='home')
 def first_aid(request):
     return render(request,'HTML/first_aid.html')
 
+@login_required(login_url='home')
 def symptom_checker(request):
     return render(request,'HTML/Symptom_checker.html')
 
+@login_required(login_url='home')
 def med_list(request):
     all_medications = Med_list.objects.all()
     return render(request,'HTML/My_med_list.html',{"val":all_medications})
@@ -230,6 +239,7 @@ def Contact(request):
     else:
         return HttpResponse("<h1>Error 404</h1>")
 
+@login_required(login_url='home')
 def Chatbot(request):
     if request.method == 'GET':
         return render(request,"HTML/Chatbot.html")

@@ -84,6 +84,7 @@ def Search(request) :
         elif x=="Z":
             return render(request,'HTML/Drug_A_side_effects.html',{"val":x})'''
 
+
 def drug_A1(request):
     x=request.GET['term']
     di={}

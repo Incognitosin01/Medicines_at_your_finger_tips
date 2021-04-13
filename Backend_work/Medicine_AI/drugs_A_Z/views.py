@@ -2,6 +2,7 @@ from django.shortcuts import render
 from Home.models import medicine
 from django.http import JsonResponse
 from django.shortcuts import render,redirect,HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Medicine_data
 from Home.models import side_effect
@@ -10,6 +11,8 @@ import re
 import speech_recognition as sr
 import pyttsx3
 from difflib import SequenceMatcher,get_close_matches
+
+login_required(login_url='home')
 def pill_identifier(request):
     return render(request,"HTML/Pill_Identifier.html")
 
@@ -151,7 +154,7 @@ def Search_med(request) :
 #         return "None"
 #     return query
 
-    
+login_required(login_url='home')   
 def Phonetic_search(request):
 
     return render(request,'HTML/phonetic_search.html')
@@ -197,8 +200,6 @@ def speech_to_text(request):
 
 
 def find_similar_word(s, kw,):
-    
-    
     global x_d
     if s in kw :
         x_d[0] = s
@@ -219,7 +220,10 @@ def return_page(request):
     elif(x_d[0] not in med2):
         print(2)
         return render(request,"HTML/phonetic_search.html")
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     else:
         print(3)
         return render(request,"Data\\drug_html_data\\medicine_data\\"+z+".html")
@@ -228,7 +232,6 @@ def return_page(request):
 def return_side_effects(request):
     global x_d
     z=x_d[0]
-    
     if(x_d[0]=='Not recognized!'):
         return render(request,"HTML/phonetic_search.html")
     elif(z not in med1):
