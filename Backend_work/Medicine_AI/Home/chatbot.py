@@ -37,22 +37,29 @@ def getresponse(sentence):
 
     sentence = tokenize(sentence)
     X = bag_of_words(sentence, all_words)
+    print(X)
     X = X.reshape(1, X.shape[0])
+    print(X)
     X = torch.from_numpy(X).to(device)
+    print(X)
 
     output = model(X)
+    print(output)
     _, predicted = torch.max(output, dim=1)
 
     tag = tags[predicted.item()]
-
+    print(tag)
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
                 return random.choice(intent['responses'])
+
     else:
         return "I do not understand"
+
+
 
 
 

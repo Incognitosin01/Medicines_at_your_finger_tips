@@ -134,6 +134,7 @@ def Search_med(request) :
         else:
             messages.warning(request,"Medicine provided is invalid or may not avaialable in DB")
             return render(request,'HTML/Pill_Identifier.html')
+        
 
 # def takeCommand():
 #     #It takes microphone input from the user and returns string output

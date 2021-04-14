@@ -16,6 +16,8 @@ from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 from django.template import loader
 import random
+from drugs_A_Z.views import find_similar_word, Search_med
+import Data
 
 #from Data.drugs_list import Drugs_List
 
@@ -248,13 +250,42 @@ def Chatbot(request):
 
 def get_bot_response(request):
     if request.method == "GET":
-        
+        flag=0
         userText = request.GET['msg']
-        return HttpResponse(str(getresponse(userText)))
+       
+        med_list = list(medicine.objects.values_list('name', flat=True))
+        words=re.split('\s+', userText)
+        for i in words:
+            i=i.capitalize()
+            if(i in med_list):
+                global c
+                ans=i
+                a="""<form action="/get_data_bot" method="GET" ><button name="term" value='"""+ans+"""' onclick="dothis(this.value)">"""+ans+"""</button></form>"""
+                
+               
+                print(a)
+                flag=1
+                break
+        if(flag==0):
+            return HttpResponse(str(getresponse(userText)))
+        else:
+            return HttpResponse(a)
         
     else:
         return HttpResponse("<h1>Error 404</h1>")
-   
+
+def get_data_bot(request):
+    x = request.GET['term']
+    print(x)
+    z = x.replace(' ','')
+    z = z.replace('|',',')
+    if x!=("Your Medicines List Ends Here"):
+        return render(request,'Data\\drug_html_data\\medicine_data\\'+z+".html")
+    else:
+        messages.warning(request,"No medicines to show")
+        return render(request,'HTML/Chatbot.html')
+        
+
 def check_token(request):
     if request.method == 'POST':
         ans = request.POST.get('token')
