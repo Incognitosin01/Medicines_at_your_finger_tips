@@ -260,10 +260,8 @@ def get_bot_response(request):
             if(i in med_list):
                 global c
                 ans=i
-                a="""<form action="/get_data_bot" method="GET" ><button name="term" value='"""+ans+"""' onclick="dothis(this.value)">"""+ans+"""</button></form>"""
+                a="""<form action="/get_bot" method="GET" ><button name="term" value='"""+ans+"""' onclick="dothis(this.value)">"""+ans+"""</button></form>"""
                 
-               
-                print(a)
                 flag=1
                 break
         if(flag==0):
