@@ -191,8 +191,13 @@ def speech_to_text(request):
         med1=list(side_effect.objects.values_list('name',flat=True))
         med2=list(medicine.objects.values_list('name',flat=True))
         ans = find_similar_word(data_1,med1+med2)
+        flag_1=flag_2=0
+        if ans in med2:
+            flag_1=1
+        if ans in med1:
+            flag_2=1
         ans = str(ans)
-        return render(request,'HTML/phonetic_search.html',{'data':ans})
+        return render(request,'HTML/phonetic_search.html',{'data':ans,'f1':flag_1,'f2':flag_2})
 
     
     else:
@@ -206,8 +211,7 @@ def find_similar_word(s, kw,):
     else :
         x_d = get_close_matches(s, kw)
         if len(x_d)==0:
-            x_d=['Not recognized!']
-            
+            x_d=['Not recognized!']       
     return x_d[0]
 
 def return_page(request):
@@ -231,7 +235,6 @@ def return_side_effects(request):
     if(x_d[0]=='Not recognized!'):
         return render(request,"HTML/phonetic_search.html")
     elif(z not in med1):
-        
         return render(request,"HTML/phonetic_search.html")
     else:
         z = x_d[0].replace('-',' ')

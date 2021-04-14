@@ -74,8 +74,15 @@
                 ON MICROPHONE BEFORE SPEAKING</h2>
             {% endif %}
             <div class="btn-group btn-group-toggle vertical-center k_grp">
-                <a href="{%url 'voice_data' %}" class="btn btn-outline-dark b_grp ">Medicine Info</a>
-                <a href="{%url 'voice_effects_data'%}" class="btn btn-outline-dark b_grp">Side Effects</a>
+                
+                {% if f1 %}
+                    <a href="{%url 'voice_data' %}" class="btn btn-outline-dark b_grp ">Medicine Info</a>
+                {% endif %}
+                
+                {% if f2  %}
+                    <a href="{%url 'voice_effects_data'%}" class="btn btn-outline-dark b_grp">Side Effects</a>
+                {% endif %}
+                    
                 <a href="{%url 'Phonetic_search'%}" class="btn btn-outline-dark b_grp">Exit</a>
             </div>
             </center>

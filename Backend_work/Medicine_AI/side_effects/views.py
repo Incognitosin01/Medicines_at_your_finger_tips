@@ -115,5 +115,5 @@ def Get_data(request):
     if x!=("Your Medicines List Ends Here"):
         return render(request,'Data\\side_effects2\\'+z+".html")
     else:
-        messages.warning(request,"No medicines to show")
+        messages.warning(request,"No medicines side effects to show")
         return render(request,'HTML/side_effects.html')
