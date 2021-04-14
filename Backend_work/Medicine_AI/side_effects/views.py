@@ -105,6 +105,12 @@ def drugs_alphabetically(request):
     x = request.GET['term']
     qs = side_effects_data.objects.filter(alpha__contains = x).first()
     print(qs)
+    x1=len(qs.name_list)
+    print(x1)
+    if(x1==1):
+        disbl="disabled"
+    else:
+        disbl=" "
     return render(request,"HTML/side_effects_alpha.html",{"list":qs.name_list,"val":x})
 
 def Get_data(request):

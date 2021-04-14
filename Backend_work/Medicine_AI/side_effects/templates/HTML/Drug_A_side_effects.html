@@ -100,33 +100,32 @@
     <form method = "GET" action = "{% url 'side_effects_alpha' %}" >
       {% csrf_token %}
     <ul class="ddc-paging ">
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}a" onclick="dothis(this.value)" {{type}}>{{val}}a</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}b" onclick="dothis(this.value)" {{type}}>{{val}}b</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}c" onclick="dothis(this.value)" {{type}}>{{val}}c</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}d" onclick="dothis(this.value)" {{type}}>{{val}}d</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}d" onclick="dothis(this.value)" {{type}}>{{val}}d</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}e" onclick="dothis(this.value)" {{type}}>{{val}}e</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}f" onclick="dothis(this.value)" {{type}}>{{val}}f</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}g" onclick="dothis(this.value)" {{type}}>{{val}}g</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}h" onclick="dothis(this.value)" {{type}}>{{val}}h</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}i" onclick="dothis(this.value)" {{type}}>{{val}}i</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}j" onclick="dothis(this.value)" {{type}}>{{val}}j</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}k" onclick="dothis(this.value)" {{type}}>{{val}}k</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}l" onclick="dothis(this.value)" {{type}}>{{val}}l</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}m" onclick="dothis(this.value)" {{type}}>{{val}}m</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}n" onclick="dothis(this.value)" {{type}}>{{val}}n</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}o" onclick="dothis(this.value)" {{type}}>{{val}}o</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}p" onclick="dothis(this.value)" {{type}}>{{val}}p</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}q" onclick="dothis(this.value)" {{type}}>{{val}}q</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}r" onclick="dothis(this.value)" {{type}}>{{val}}r</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}s" onclick="dothis(this.value)" {{type}}>{{val}}s</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}t" onclick="dothis(this.value)" {{type}}>{{val}}t</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}u" onclick="dothis(this.value)" {{type}}>{{val}}u</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}v" onclick="dothis(this.value)" {{type}}>{{val}}v</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}w" onclick="dothis(this.value)" {{type}}>{{val}}w</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}x" onclick="dothis(this.value)" {{type}}>{{val}}x</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}y" onclick="dothis(this.value)" {{type}}>{{val}}y</button></li>
-      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}z" onclick="dothis(this.value)" {{type}}>{{val}}z</button></li> 
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}a" onclick="dothis(this.value)" {{typea}}>{{val}}a</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}b" onclick="dothis(this.value)" {{typeb}}>{{val}}b</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}c" onclick="dothis(this.value)" {{typec}}>{{val}}c</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}d" onclick="dothis(this.value)" {{typed}}>{{val}}d</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}e" onclick="dothis(this.value)" {{typee}}>{{val}}e</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}f" onclick="dothis(this.value)" {{typef}}>{{val}}f</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}g" onclick="dothis(this.value)" {{typeg}}>{{val}}g</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}h" onclick="dothis(this.value)" {{typeh}}>{{val}}h</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}i" onclick="dothis(this.value)" {{typei}}>{{val}}i</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}j" onclick="dothis(this.value)" {{typej}}>{{val}}j</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}k" onclick="dothis(this.value)" {{typek}}>{{val}}k</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}l" onclick="dothis(this.value)" {{typel}}>{{val}}l</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}m" onclick="dothis(this.value)" {{typem}}>{{val}}m</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}n" onclick="dothis(this.value)" {{typen}}>{{val}}n</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}o" onclick="dothis(this.value)" {{typeo}}>{{val}}o</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}p" onclick="dothis(this.value)" {{typep}}>{{val}}p</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}q" onclick="dothis(this.value)" {{typeq}}>{{val}}q</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}r" onclick="dothis(this.value)" {{typer}}>{{val}}r</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}s" onclick="dothis(this.value)" {{types}}>{{val}}s</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}t" onclick="dothis(this.value)" {{typet}}>{{val}}t</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}u" onclick="dothis(this.value)" {{typeu}}>{{val}}u</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}v" onclick="dothis(this.value)" {{typev}}>{{val}}v</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}w" onclick="dothis(this.value)" {{typew}}>{{val}}w</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}x" onclick="dothis(this.value)" {{typex}}>{{val}}x</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}y" onclick="dothis(this.value)" {{typey}}>{{val}}y</button></li>
+      <li class="navitem"><button name="term" class="buton btn btn-outline-dark" value="{{val}}z" onclick="dothis(this.value)" {{typez}}>{{val}}z</button></li> 
         
     </ul>
     </form>
