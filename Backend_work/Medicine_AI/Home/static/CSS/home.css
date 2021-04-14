@@ -13,6 +13,13 @@ body{
     opacity: 1;
    
 }
+/* #sc1,#daz,#dbc,#se,#fa,#ml{
+    position:fixed;
+    bottom:0;
+} */
+.card-title{
+    font-family: 'Lobster',cursive;
+}
 .modal-title,.modal-body{
    color: black;
 }

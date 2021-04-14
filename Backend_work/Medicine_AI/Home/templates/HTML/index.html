@@ -106,34 +106,7 @@
               </div>
             </div>
             {% endif %}
-          <li class="nav-item">
-            {% if user.is_authenticated %}
-            <a class="nav-link" href="{% url 'chatbot' %}">ChatBot</a>
-            {% else %}
-            <a class="nav-link" href="{% url 'chatbot' %}">ChatBot</a>
-            <div class="modal fade" id="Block" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header" style="background-color: cadetblue;">
-                    <h5 class="modal-title">Warning!</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Please Login First!</p>
-                  </div>
-                  <div class="modal-footer">
-
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% endif %}
-          </li>
-          </li>
+          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
@@ -385,14 +358,14 @@
               height: auto;
             ">
           <img src="{% static '/IMAGES/symptom.jpeg' %}" class="card-img-top img-fluid" style=" object-fit:cover"
-            alt="SYMPTOM CHECKER" />
+            alt="AI chatbot" />
           <div class="card-body flex-fill">
-            <h5 class="card-title">Symptom Checker</h5>
-            <p class="lead" style="text-align: justify;">
-              Give your symptoms here and get suitable medicine for your illness through our AI chatbot.
+            <h5 class="card-title">MITIAN's DOCTOR</h5>
+            <p class="lead" style="text-align: justify;margin-bottom: 70px;">
+              Get your all doubts clear about diversed medical fields from our AI chatbot
             </p>
             {% if user.is_authenticated %}
-            <a href="{% url 'Symptom_checker' %}" id="sc1" class="btn btn-outline-dark">Check</a>
+            <a href="{% url 'chatbot' %}" id="sc1" class="btn btn-outline-dark">Check</a>
             {% else %}
             <!-- "btn btn-outline-dark" -->
             <a type="button" class=" btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#Block"
@@ -432,7 +405,7 @@
             style=" object-fit:cover" alt="DRUGS_A_Z" />
           <div class="card-body flex-fill">
             <h5 class="card-title">Drugs A-Z</h5>
-            <p class="lead" style="text-align: justify;">
+            <p class="lead" style="text-align: justify;margin-bottom: 45px;">
               Find any information about any drug here with the help of our all medicine database.
             </p>
             {% if user.is_authenticated %}
@@ -475,7 +448,7 @@
             style=" object-fit:cover" alt="DRUGS_BY_CONDITION" />
           <div class="card-body flex-fill">
             <h5 class="card-title">Drugs by Condition</h5>
-            <p class="lead" style="text-align: justify;">
+            <p class="lead" style="text-align: justify;margin-bottom: 45px;">
               Get list of medicines here with your recspective conditions with help of our database.
             </p>
             {% if user.is_authenticated %}
@@ -522,7 +495,7 @@
             alt="SIDE_EFFECTS" />
           <div class="card-body">
             <h5 class="card-title">Side Effects</h5>
-            <p class="lead" style="text-align: justify;">
+            <p class="lead" style="text-align: justify;margin-bottom: 45px;">
               Get to know all the side effects of any medicine or drug with the help of our database.
             </p>
             {% if user.is_authenticated %}
@@ -565,7 +538,7 @@
             alt="FIRST_AID" />
           <div class="card-body ">
             <h5 class="card-title">First AID</h5>
-            <p class="lead" style="text-align: justify;">
+            <p class="lead" style="text-align: justify;margin-bottom: 70px;">
               Get all the information of first-aid of many conditions with the help of our database.
             </p>
             {% if user.is_authenticated %}
@@ -607,7 +580,7 @@
             alt="MED_LIST" />
           <div class="card-body">
             <h5 class="card-title">My Med List</h5>
-            <p class="lead" style="text-align: justify;">
+            <p class="lead" style="text-align: justify;margin-bottom: 70px;">
               Get to know all the history of your medicines with help of our MITIAN's DOCTOR.
             </p>
             {% if user.is_authenticated %}
