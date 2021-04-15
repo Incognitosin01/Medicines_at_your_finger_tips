@@ -19,6 +19,7 @@ urlpatterns = [
     path('Chatbot',views.Chatbot,name='chatbot'),
     path('get',views.get_bot_response,name="response"),
     path('get_token',views.check_token,name='get_token'),
-    path('get_bot',views.get_data_bot,name='get_data_bot')
+    path('get_bot',views.get_data_bot,name='get_data_bot'),
+    path('get_component',views.get_component_link_bot ,name='get_component')
     
 ]

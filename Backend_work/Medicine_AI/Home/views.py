@@ -251,24 +251,49 @@ def Chatbot(request):
 def get_bot_response(request):
     if request.method == "GET":
         flag=0
+        compo_flag=0
         userText = request.GET['msg']
        
         med_list = list(medicine.objects.values_list('name', flat=True))
+        web_components=['Drugs_a-z','drugs_by_condition','side_effects','first_aid','My_med_list','Pill_Identifier','phonetic_search','Pregnancy_care','skin_infection','wounds','Bacterial_Infection','Soft_tissue','burns_med','Soft_tissue_foreign_body','wound_infection','accidents_n_emergencies','first_aid_info','first_aid_gloss' ,'first_aid_kit']
         words=re.split('\s+', userText)
-        for i in words:
-            i=i.capitalize()
-            if(i in med_list):
-                global c
-                ans=i
-                a="""<form action="/get_bot" method="GET" ><button name="term" value='"""+ans+"""' onclick="dothis(this.value)">"""+ans+"""</button></form>"""
-                
-                flag=1
+        for i in web_components:
+            j=i.replace('_',' ')
+            j=j.capitalize()
+            for w in range(0,len(words)):
+                y=words[w]
+                for x in range(w+1,len(words)+1):
+                    y=y.capitalize()
+                    print(y,j)
+                    if y==j:
+                        compo_flag=1
+                        html1="""<form action="/get_component" method="GET" ><button name="term" value='"""+i+"""' onclick="dothis(this.value)">"""+i+"""</button></form>"""
+                    
+                        break
+                    else:
+                        if(x<len(words)):
+                            y=y+' '+words[x]
+                if(compo_flag==1):
+                    break
+            if(compo_flag==1):
                 break
-        if(flag==0):
-            return HttpResponse(str(getresponse(userText)))
+        if(compo_flag==1):
+            return HttpResponse(html1)
         else:
-            return HttpResponse(a)
-        
+                    
+            for i in words:
+                k=i.capitalize()
+                if(k in med_list):
+                    ans=i
+                    a="""<form action="/get_bot" method="GET" ><button name="term" value='"""+ans+"""' onclick="dothis(this.value)">"""+ans+"""</button></form>"""
+                    flag=1
+                    break
+            if(flag==0):
+                print("getresponse")
+                return HttpResponse(str(getresponse(userText)))
+            else:
+                return HttpResponse(a)
+            
     else:
         return HttpResponse("<h1>Error 404</h1>")
 
@@ -282,8 +307,16 @@ def get_data_bot(request):
     else:
         messages.warning(request,"No medicines to show")
         return render(request,'HTML/Chatbot.html')
-        
 
+def get_component_link_bot(request):
+    x = request.GET['term']
+    print(x)
+    if x!=("Your Medicines List Ends Here"):
+        return render(request,'Data\\HTML\\'+x+".html")
+    else:
+        messages.warning(request,"No medicines to show")
+        return render(request,'HTML/Chatbot.html')
+        
 def check_token(request):
     if request.method == 'POST':
         ans = request.POST.get('token')
@@ -297,7 +330,7 @@ def check_token(request):
         else:
             messages.error(request,'Token entered was incorrect. Please Sign In again')
             return redirect('home')
-
     else:
         return HttpResponse("<h1>ERROR 404</h1>")
+
 

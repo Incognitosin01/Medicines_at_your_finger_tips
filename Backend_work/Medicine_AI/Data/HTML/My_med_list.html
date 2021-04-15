@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'IMAGES/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'IMAGES/favicon.ico' %}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'CSS/med_list.css' %}">
+    <title>MY MED LIST</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MITIAN's DOCTOR</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert" id="msg">
+        <strong>Message : </strong>
+        {{ message }}
+
+    </div>
+    {% endfor %}
+
+    <div class="email_data" onmouseover="check()">
+        <h2>Email ID : <input type="text" value="{{user.email}}" readonly> All notifications will be sent on respective mail</h2>
+    </div>
+    <div class="row tab_sp">
+        <div class="col-sm-4  " id="formm">
+            <h3 class="text-center alert alert-dark">Add New Prescription</h3>
+            <form action="{% url 'Myy_med_list' %}" method="POST">
+                {% csrf_token %}
+                <label for="name">Medication Name</label>
+                <input class="form-control " type="text" name="Medication_Name" id="" placeholder="Enter drug name here" required>
+                <label for="dosage">Dosage</label>
+                <input type="text" class="form-control" name="Dosage" id="" placeholder="Enter dosage here" required>
+                <label for="instructions">Instructions</label>
+                <input type="text" class="form-control" name="Instructions" id="" placeholder="Enter Dr instructions here" required>
+                <div class="form_btn">
+                    <button class="btn btn-outline-dark">Cancel</button>
+                    <button class="btn btn-outline-dark" type="submit">Save</button>
+                </div>
+            </form>
+            
+        </div>
+        <div class="col-sm-8">
+            <h3 class="text-center alert alert-dark">Previous Data</h3>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Medication Name</th>
+                        <th scope="col">Dosage</th>
+                        <th scope="col">Instructions</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                    {% if val %}
+                    {% for z in val %}
+                    <tr> 
+                        <td>{{z.Medication_Name}}</td>
+                        <td>{{z.Dosage}}</td>
+                        <td>{{z.Instructions}}</td>
+                        <td>
+                       <form action="{% url 'delete_data' z.id %}" method="POST" class="d-inline">
+                           {% csrf_token %}
+                           <input type="submit" value="Delete" class="btn btn-outline-dark">
+                       </form></td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <td colspan="4" class="text-center">No records Found</td>
+                    {% endif %}
+                    </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    <div id="mybutton">
+        <button class="add_dos" onclick="show_form()">+</button>
+    </div>
+    <!-- <footer class="container" style="margin-top: 15px">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>
+            © 2021-2025 MITIAN's DOCTOR, Inc. · <a href="#">Privacy</a> ·
+            <a href="#">Terms</a>
+        </p>
+    </footer> -->
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+
+    <script>
+        let a=1;
+        function check() {
+            
+            if (a===1){
+                $('.email_data').css({ "background-color": "cadetblue" });
+                a=0;
+            }
+            else{
+                $('.email_data').css({ "background-color": "whitesmoke" });
+                a=1;
+            }
+        }
+        function show_form() {
+            document.getElementById("formm").style.display = "block"
+        }
+    </script>
+
+</body>
+
+</html>
