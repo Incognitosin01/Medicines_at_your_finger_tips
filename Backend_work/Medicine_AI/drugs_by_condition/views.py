@@ -27,12 +27,11 @@ def med_list(request):
         meds.append(f)
     return render(request,"HTML/burns_med.html",{"list":meds})
 
-# Create your views here.
 def get_data(request):
     x = request.GET['term']
     print(x)
     z = x.replace(' ','')
-    return render(request,'/Data/wounds/burns/'+z+".html")
+    return render(request,'Data/wounds/burns/'+z+".html")
 
 @login_required(login_url='home')
 def Pregnancy(request):

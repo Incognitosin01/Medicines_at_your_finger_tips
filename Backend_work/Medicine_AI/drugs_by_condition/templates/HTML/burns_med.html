@@ -98,7 +98,8 @@
 
     <ul style="list-style-type: none">
     {% for medicine in list  %}
-    <form  method="GET" action= "{% url 'burns_list' %}">
+    <form  method="GET" action= "{% url 'burns_data' %}">
+      {% csrf_token %}
         <li><button name="term" class="buton btn btn-outline-dark" style="width:100%; margin-top:4px;border: palegreen ;text-align: left;" value="{{medicine|to_and}}" onclick="dothis(this.value)">{{medicine|to_and}}</button></li>
     </form>
     {% endfor %}

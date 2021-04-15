@@ -255,9 +255,10 @@ def get_bot_response(request):
         userText = request.GET['msg']
        
         med_list = list(medicine.objects.values_list('name', flat=True))
-        web_components=['Drugs_a-z','drugs_by_condition','side_effects','first_aid','My_med_list','Pill_Identifier','phonetic_search','Pregnancy_care','skin_infection','wounds','Bacterial_Infection','Soft_tissue','burns_med','Soft_tissue_foreign_body','wound_infection','accidents_n_emergencies','first_aid_info','first_aid_gloss' ,'first_aid_kit']
+        global web_components
+        web_components={'Drugs_a-z':'drugs_A_Z','drugs_by_condition':'drugs_by_cond','side_effects':'side_effects','first_aid':'first_aid','My_med_list':'My_med_list','Pill_Identifier':'Pill_Identifier','phonetic_search':'Phonetic_search','Pregnancy_care':'Pregnancy_Care','skin_infection':'skin_infection','wounds':'wounds','Bacterial_Infection':'Bacterial','Soft_tissue':'Soft','burns_med':'burns_list','Soft_tissue_foreign_body':'soft_tissue1','wound_infection':'wound_infection','accidents_n_emergencies':'accidents_n_emergency','first_aid_info':'first_aid_info','first_aid_gloss':'first_aid_gloss' ,'first_aid_kit':'first_aid_kit'}
         words=re.split('\s+', userText)
-        for i in web_components:
+        for i in web_components.keys():
             j=i.replace('_',' ')
             j=j.capitalize()
             for w in range(0,len(words)):
@@ -310,12 +311,10 @@ def get_data_bot(request):
 
 def get_component_link_bot(request):
     x = request.GET['term']
-    print(x)
-    if x!=("Your Medicines List Ends Here"):
-        return render(request,'Data\\HTML\\'+x+".html")
-    else:
-        messages.warning(request,"No medicines to show")
-        return render(request,'HTML/Chatbot.html')
+    global web_components
+    return redirect(web_components[x])
+    
+    
         
 def check_token(request):
     if request.method == 'POST':
