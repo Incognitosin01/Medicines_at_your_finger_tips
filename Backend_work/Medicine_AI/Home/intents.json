@@ -2,12 +2,12 @@
 {"intents": [
         {"tag": "greeting",
          "patterns": ["Hi","Hey", "How are you", "Is anyone there?", "Hello", "Good day"],
-         "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?","Fine, tell me about yourself?"],
+         "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
          "context_set": ""
         },
         
         {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye","How are you"],
+         "patterns": ["Bye", "See you later", "Goodbye"],
          "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
         },
         {"tag": "thanks",
