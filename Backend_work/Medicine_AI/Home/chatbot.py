@@ -2,6 +2,11 @@ import random
 import json
 import torch
 import wikipedia
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 68aece79ddabcb11937f5cd9ec5930d3dba37384
 from .model1 import NeuralNet
 from .nltk_utils import bag_of_words, tokenize
 
@@ -49,11 +54,16 @@ def getresponse(sentence):
                 return random.choice(intent['responses'])
 
     else:
+<<<<<<< HEAD
         print(wiki_sentence)
         results = wikipedia.summary(wiki_sentence,sentences=3)
         print(results)
         final_ans = 'According to Wikipedia '+ results
         return final_ans
+=======
+        return wikipedia.summary(sentence,sentences=1)
+
+>>>>>>> 68aece79ddabcb11937f5cd9ec5930d3dba37384
 
 
 

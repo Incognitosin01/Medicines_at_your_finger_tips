@@ -27,17 +27,17 @@
          "responses": ["I'm in doubt about that", "No, i don't think so i need to do all this"]
         },
         {"tag": "MITIAN doctor",
-         "patterns": ["Who are you?", "tell me about yourself", "tell me about you", "do you know MITIAN doctor", "who is MITIAN doctor", "what is your name","are you an AI", "what are you" ],
+         "patterns": ["Who are you?", "tell me about yourself", "tell me about you", "do you know MITIAN doctor", "who is MITIAN doctor", "your name","are you an AI" ],
          "responses": ["Hi I'm your MITIAN doctor and i'm an AI created for chatting with humans","Your MITIAN doctor here, a very advance chatbot", "MITIAN doctor, chatbot of future", "Yes, I'm MITIAN doctor", "You can call me MITIAN doctor"],
          "context_set": ""
         },
         {"tag": "about me",
          "patterns": ["Do you know me?", "who am I", "tell me about myself","identify me" ],
-         "responses": ["Yes, you are a human","You are a dumb person asking a machine about yourself", "Sorry i can't tell that in public, maybe you are batman"],
+         "responses": ["Yes, you are a human", "Sorry i can't tell that"],
          "context_set": ""
         },
         {"tag": "creator",
-         "patterns": ["Who is your creator?", "who created you", "who is your father","who is your daddy" ],
+         "patterns": ["Who is your creator?", "who created you", "who is your father","who is your father" ],
          "responses": ["My creater is a human", "I am not allowed to tell you the name of my creator"],
          "context_set": ""
         },
@@ -61,36 +61,14 @@
          "responses": ["Then who would i talk to?","No, that i'll left for humans to do", "I don't think it is a good thing to do"],
          "context_set": ""
         },
-        {"tag": "bookings",
-         "patterns": ["Can you book us a ticket?", "Can you make reservation for hotels", "book me a cab","book me a table at restraunts"],
-         "responses": ["Yeah i will do that for you","Sure thing why not?","let me check for the availability"],
-         "context_set": ""
-        },
+        
         {"tag": "stories",
          "patterns": ["tell me a story?", "can you tell me a story"],
          "responses": ["I can't think of anything right now","it would be too long for me to speak","you would get bored if i do so"],
          "context_set": ""
-        },
-        {"tag": "weather",
-         "patterns": ["get me weather updates?", "how's the weather", "weather news", "weather details"],
-         "responses": ["Fetching weather updates ..."],
-         "context_set": "weather"
-        },
-        {"tag": "google",
-         "patterns": ["googling", "search google", "google it", "google", "search"],
-         "responses": ["looking ..."],
-         "context_set": "google"
-        },
-        {"tag": "wikipedia",
-         "patterns": ["wikipedia", "wiki"],
-         "responses": ["Searching ..."],
-         "context_set": "wikipedia"
-        },
-        {"tag": "news",
-         "patterns": ["get me news updates?", "todays news", "top headlines", "current news", "news headlines"],
-         "responses": ["Getting news ..."],
-         "context_set": "news"
         }
+       
+        
 
    ]
 }
