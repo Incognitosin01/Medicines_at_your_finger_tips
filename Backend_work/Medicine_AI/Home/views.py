@@ -268,8 +268,7 @@ def get_bot_response(request):
                     print(y,j)
                     if y==j:
                         compo_flag=1
-                        html1="""<form action="/get_component" method="GET" ><button name="term" value='"""+i+"""' onclick="dothis(this.value)">"""+i+"""</button></form>"""
-                    
+                        html1="""<form action="/get_component" method="GET" ><h5> Here's your required page : </h5><button name="term" class="btn btn-outline-success" value='"""+i+"""' onclick="dothis(this.value)">"""+i+"""</button></form>"""
                         break
                     else:
                         if(x<len(words)):
@@ -280,13 +279,12 @@ def get_bot_response(request):
                 break
         if(compo_flag==1):
             return HttpResponse(html1)
-        else:
-                    
+        else:         
             for i in words:
                 k=i.capitalize()
                 if(k in med_list):
                     ans=i
-                    a="""<form action="/get_bot" method="GET" ><button name="term" value='"""+ans+"""' onclick="dothis(this.value)">"""+ans+"""</button></form>"""
+                    a="""<form action="/get_bot" method="GET" ><h5> Here's what I got for you : </h5><button name="term" class="btn btn-outline-success" value='"""+ans+"""' onclick="dothis(this.value)">"""+ans+"""</button></form>"""
                     flag=1
                     break
             if(flag==0):

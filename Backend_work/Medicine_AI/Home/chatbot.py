@@ -1,15 +1,13 @@
 import random
 import json
 import torch
-
-
-
+import wikipedia
 from .model1 import NeuralNet
 from .nltk_utils import bag_of_words, tokenize
 
 def getresponse(sentence):
 
-
+    wiki_sentence = sentence
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     with open('HOME/intents.json', 'r') as json_data:
@@ -28,12 +26,6 @@ def getresponse(sentence):
     model = NeuralNet(input_size, hidden_size, output_size).to(device)
     model.load_state_dict(model_state)
     model.eval()
-
-    
-
-    
-    
-    
 
     sentence = tokenize(sentence)
     X = bag_of_words(sentence, all_words)
@@ -57,7 +49,11 @@ def getresponse(sentence):
                 return random.choice(intent['responses'])
 
     else:
-        return "I do not understand"
+        print(wiki_sentence)
+        results = wikipedia.summary(wiki_sentence,sentences=3)
+        print(results)
+        final_ans = 'According to Wikipedia '+ results
+        return final_ans
 
 
 
