@@ -1,7 +1,7 @@
 import random
 import json
 import torch
-
+import wikipedia
 
 
 from .model1 import NeuralNet
@@ -57,7 +57,8 @@ def getresponse(sentence):
                 return random.choice(intent['responses'])
 
     else:
-        return "I do not understand"
+        return wikipedia.summary(sentence,sentences=1)
+
 
 
 
