@@ -20,5 +20,4 @@ def delete_data(request,id):
     if request.method == "POST":
         x = Med_list.objects.get(pk=id)
         x.delete()
-        
         return redirect('My_med_list')

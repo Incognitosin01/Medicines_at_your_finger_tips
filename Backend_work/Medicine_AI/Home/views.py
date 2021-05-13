@@ -167,7 +167,7 @@ def handle_login(request):
         user = auth.authenticate(username = Username,password=password_1)
         if user is not None:
             login(request,user)
-            messages.success(request,"Successfully Logged In")
+            messages.success(request,"Successfully Logged In!")
             return redirect('home')
             
         else:
